@@ -1,16 +1,67 @@
 # flutter_date_time_month_year_picker
+## A new Flutter project.
 
-A new Flutter project.
+- showDatePicker
+- showTimePicker
+- YearPicker
+            - A scrollable list of years to allow picking a year.
+            - The year picker widget is rarely used directly. Insted, consider using __showDatePicker__ , which creates a date picker dialog.
+            - Requires one of its ancestors to be a __Material__ widget
+- Month Picker
+              - A scrollable list of months to allow picking a month.
+              - Show the days of each month in a rectangular grid with one  column for each day of the week
+              - The month picker widget is rarley used directly. Insted, consider using __showDatePicker__, which creates a date picker dialog.
 
-## Getting Started
+## showDatePicker fuction
+```sh
+Future<DateTime?> showDatePicker({
+  required BuildContext context,
+  required DateTime initialDate,
+  required DateTime firstDate,
+  required DateTime lastDate,
+  DateTime? currentDate,
+  DatePickerEntryMode initialEntryMode = DatePickerEntryMode.calendar,
+  SelectableDayPredicate? selectableDayPredicate,
+  Locale? locale,
+  bool useRootNavigator = true,
+  RouteSettings? routeSettings,
+  TextDirection? textDirection,
+  TransitionBuilder? builder,
+  String? errorFormatText,
+  String? errorInvalidText,
+  String? fieldHintText,
+  String? fieldLabelText,
+}) 
+```
+## YearPicker constructor
+```sh
+YearPicker({
+  Key? key
+  required DateTime  selectedDate,
+  required valueChanged<DateTime> onChanged,
+  required DateTime firstDate,
+  required DateTime lastDate,
+  DragStartBehaviour dragStartBehavior:DragStartBehavior.start
+}) 
+```
 
-This project is a starting point for a Flutter application.
+## MonthPicker constructor
+```sh
+Month Picker({
+  Key? key
+  required DateTime  selectedDate,
+  required valueChanged<DateTime> onChanged,
+  required DateTime firstDate,
+  required DateTime lastDate,
+  SelectableDayPredicate? selectableDayPredicate,
+  DragStartBehaviour dragStartBehavior:DragStartBehavior.start
+}) 
+```
+## Using Time Pickers With Form
 
-A few resources to get you started if this is your first Flutter project:
+Dillinger uses a number of open source projects to work properly:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- As on of form filed
+- Enabling error handling
+- Making year selection easy in showDatePicker
+- Customizing selectable days 
